@@ -1,0 +1,15 @@
+import matplotlib.pyplot as plt
+import numpy as np 
+x=np.linspace(0,5e-6,100000)
+y=(1/3)*(1-np.exp((-3/2)*1e6*x))
+ngspice=np.loadtxt('4.4.dat')
+plt.plot(x,y,color="blue",label='analytical')
+plt.plot(ngspice[:,0],ngspice[:,1],'o',color='orange',label='stimulation')
+plt.grid()
+plt.legend()
+ax=plt.gca()
+ax.set_xlabel('t')
+ax.set_xlabel('t') 
+ax.set_ylabel('$H(t)$')
+# plt.savefig('../figs/4.4.png')
+plt.show()
